@@ -1,7 +1,7 @@
 <?php if (!defined('RAPTORPHP_ENGINE')) require_once('../die.php');
 
 abstract class Base {
-	private static $instance;
+	public static $instance;
 	function Base() {
 		self::$instance =& $this;
 	}
@@ -10,8 +10,11 @@ abstract class Base {
 	}
 }
 abstract class Controller extends Base {
-	static function init() {
-		print_r(parent::Base());
+	static function load($className) {
+		$sep = split('/',$className);
+		$appName = $sep[1];
+		$conName = $sep[2];
+		require_once($_ENV['raptorphp.dir_apps'] . $appName . '/controllers/' . $conName . '.php');
 	}
 }	
 

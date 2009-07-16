@@ -8,9 +8,9 @@ define('TEST', 2);
 
 $config['mode'] = DEVELOPMENT;
 
-$config['appsDir'] = RAPTORPHP_BOOTSTRAP . 'applications/';
-$config['pluginsDir'] = RAPTORPHP_BOOTSTRAP . 'plugins/';
-$config['helpersDir']= RAPTORPHP_BOOTSTRAP . 'helpers/';
+$config['appsDir'] =  'applications/';
+$config['pluginsDir'] = 'plugins/';
+$config['helpersDir']= 'helpers/';
 
 $config['mainApp'] = "home.MainApplication";
 $config['disabledApps'] =  array( // 'welcome.WelcomeApplication' 
