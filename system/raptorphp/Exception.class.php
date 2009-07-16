@@ -11,6 +11,9 @@ abstract class ExceptionHandler {
  */
 		ErrorHandler::show_error($error);
 	}
+	static function ErrorStr($error) {
+		ErrorHandler::show_errorstr($error);
+	}
 }
 class ErrorHandler extends Exception {
 	public static $_message;
@@ -32,6 +35,9 @@ class ErrorHandler extends Exception {
 		echo $error['ErrorFile'] . ' (' . $error['ErrorLine'] . ')';
 		exit(1);
 
+	}
+	static  function show_errorstr($error) {
+		die($error);
 	}
 }
 ?>

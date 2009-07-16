@@ -7,7 +7,6 @@ abstract class RaptorPHP {
 	}
 	static function ErrorHandler($errno, $errstr, $errfile, $errline) {
 		define("RAPTORPHP_ERROR", true);
-		self::import("raptorphp.Exception");
 		$error = array( 'ErrorNo'   => $errno,
 				'ErrorStr'  => $errstr,
 				'ErrorFile' => $errfile,
@@ -24,12 +23,9 @@ abstract class RaptorPHP {
 	}
 	static function Router() {
 		$request = $_ENV['raptorphp.url_request'];
-		try {
-			Controller::load($request);
-		}
-		catch (Exception $exception) {
-			die("Error: $exception");
-		}
+		if ($request == "/") $request = Config::get_value('mainApp');
+		$request = str_replace('.','/',$request);
+		Controller::load($request);
 	}
 }
 ?>

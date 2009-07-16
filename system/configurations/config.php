@@ -12,7 +12,7 @@ $config['appsDir'] =  'applications/';
 $config['pluginsDir'] = 'plugins/';
 $config['helpersDir']= 'helpers/';
 
-$config['mainApp'] = "home.MainApplication";
+$config['mainApp'] = "home.welcome";
 $config['disabledApps'] =  array( // 'welcome.WelcomeApplication' 
 				);
 $config['database'] = "'mysql:host=localhost:dbname=DBNAME', 'USERNAME', 'PASS'";

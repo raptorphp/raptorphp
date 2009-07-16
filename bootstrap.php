@@ -21,6 +21,7 @@ RaptorPHP::init();
 
 RaptorPHP::import("raptorphp.Config");
 RaptorPHP::import("raptorphp.Base");
+RaptorPHP::import("raptorphp.Exception");
 
 RaptorPHP::init_config();
 

@@ -11,12 +11,14 @@ abstract class Config {
 	public static $mainApp = '';
 	public static $database = '';
 	public static $disabledApps = array();
+	public static $config = array();
 	static function init() {
 		if (self::$mode == self::PRODUCTION) self::$useCache = true;
 		$_ENV['raptorphp.dir_apps'] = self::$appsDir;
 		//date_default_timezone_set();
 	}
 	static function load($config = array()) {
+		self::$config = $config;
 		self::$mode = $config['mode'];
 		self::$appsDir = $config['appsDir'];
 		self::$pluginsDir = $config['pluginsDir'];
@@ -25,6 +27,9 @@ abstract class Config {
 		self::$disabledApps = $config['disabledApps'];
 		self::$database = $config['database'];
 		self::init();
+	}
+	static function get_value($name) {
+		return self::$config[$name];
 	}
 }
 ?>
