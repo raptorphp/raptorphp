@@ -20,7 +20,7 @@ require_once('./system/RaptorPHP.class.php');
 RaptorPHP::init();
 
 RaptorPHP::import("raptorphp.Config");
-RaptorPHP::import("raptorphp.Controller");
+RaptorPHP::import("raptorphp.Base");
 
 RaptorPHP::init_config();
 
