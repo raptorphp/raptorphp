@@ -9,8 +9,8 @@ abstract class RaptorPHP {
 		$file = str_replace('.','/',$file);
 		require_once($file.'.class.php');
 	}
-	static function Config($file='./config.php') {
-		require_once($file);
+	static function init_config($file='config.php') {
+		require_once($_ENV['raptorphp.dir_configs'] . $file);
 		Config::load($config);
 	}
 	static function Router() {
