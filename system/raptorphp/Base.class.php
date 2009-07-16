@@ -1,8 +1,8 @@
 <?php if (!defined('RAPTORPHP_ENGINE')) require_once('../die.php');
 
-abastract class Base {
+abstract class Base {
 	private static $instance;
-	static function Base {
+	function Base() {
 		self::$instance =& $this;
 	}
 	static function &get_instance() {
@@ -11,7 +11,7 @@ abastract class Base {
 }
 abstract class Controller extends Base {
 	static function init() {
-
+		print_r(parent::Base());
 	}
 }	
 
