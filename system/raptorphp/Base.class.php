@@ -12,9 +12,13 @@ abstract class Base {
 abstract class Controller extends Base {
 	static function load($className) {
 		$sep = split('/',$className);
-		$appName = $sep[1];
-		$conName = $sep[2];
-		require_once($_ENV['raptorphp.dir_apps'] . $appName . '/controllers/' . $conName . '.php');
+		if (count($sep) < 2)) {
+			$appName = $sep[1];
+			$conName = $sep[2];
+			require_once($_ENV['raptorphp.dir_apps'] . $appName . '/controllers/' . $conName . '.php');
+		} else {
+			
+		}
 	}
 }	
 
